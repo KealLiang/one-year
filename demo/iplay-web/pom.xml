@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>demo</artifactId>
+        <groupId>com.kealliang</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>iplay-web</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.boot</artifactId>
+            <version>${sahara-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.mq</artifactId>
+            <version>${sahara-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>common</artifactId>
+            <version>${my-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>february</artifactId>
+            <version>${my-version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- 打包插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.3.3.RELEASE</version>
+                <configuration>
+                    <mainClass>com.meicloud.ihr.Application</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

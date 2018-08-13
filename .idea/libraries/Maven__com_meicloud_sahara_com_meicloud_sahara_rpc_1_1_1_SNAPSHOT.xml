@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.meicloud.sahara:com.meicloud.sahara.rpc:1.1.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meicloud/sahara/com.meicloud.sahara.rpc/1.1.1-SNAPSHOT/com.meicloud.sahara.rpc-1.1.1-20180519.015005-7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meicloud/sahara/com.meicloud.sahara.rpc/1.1.1-SNAPSHOT/com.meicloud.sahara.rpc-1.1.1-20180519.015005-7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meicloud/sahara/com.meicloud.sahara.rpc/1.1.1-SNAPSHOT/com.meicloud.sahara.rpc-1.1.1-20180519.015005-7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

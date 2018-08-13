@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="base.common" />
+        <module name="base.entity" />
+        <module name="common" />
+        <module name="february" />
+        <module name="iplay-web" />
+        <module name="january" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="base" target="1.8" />
+      <module name="base.common" target="1.8" />
+      <module name="base.entity" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="demoweb" target="1.8" />
+      <module name="february" target="1.8" />
+      <module name="ipeople-parent" target="1.8" />
+      <module name="iplay-web" target="1.8" />
+      <module name="january" target="1.8" />
+      <module name="parent" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

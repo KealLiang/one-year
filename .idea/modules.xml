@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.common/base.common.iml" filepath="$PROJECT_DIR$/base/base.common/base.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.entity/base.entity.iml" filepath="$PROJECT_DIR$/base/base.entity/base.entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/common/common.iml" filepath="$PROJECT_DIR$/demo/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/february/february.iml" filepath="$PROJECT_DIR$/demo/february/february.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../parent/ipeople-parent.iml" filepath="$PROJECT_DIR$/../parent/ipeople-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/iplay-web/iplay-web.iml" filepath="$PROJECT_DIR$/demo/iplay-web/iplay-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/january/january.iml" filepath="$PROJECT_DIR$/demo/january/january.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/myzone.iml" filepath="$PROJECT_DIR$/.idea/myzone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../parent/parent.iml" filepath="$PROJECT_DIR$/../parent/parent.iml" />
+    </modules>
+  </component>
+</project>

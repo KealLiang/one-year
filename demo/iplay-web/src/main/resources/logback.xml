@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration >
+	<define name="APP_NAME" class="com.meicloud.sahara.core.logger.AppNamePropertyDefiner"></define>
+	<define name="ROOT_LEVEL" class="com.meicloud.sahara.core.logger.RootLevelPropertyDefiner"></define>
+	<define name="LOG_HOME" class="com.meicloud.sahara.core.logger.FileDirPropertyDefiner"></define>
+	<define name="KAFKA_TOPIC" class="com.meicloud.sahara.core.logger.KafkaTopicPropertyDefiner"></define>
+	<define name="KAFKA_SERVERS" class="com.meicloud.sahara.core.logger.KafkaServersPropertyDefiner"></define>
+	<conversionRule conversionWord="ipandhostname" converterClass="com.kealliang.base.logs.IPConvert" />
+    
+	<logger name="org.springframework" level="WARN"/>
+	<logger name="org.mybatis" level="WARN" />
+	<logger name="com.meicloud.sahara.security.session" level="WARN" />
+
+  	<appender name="STD_LOG_OUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}|%-5level|[%thread]| %logger{50}| %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="kafkaAppender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
+        <encoder class="com.github.danielwegener.logback.kafka.encoding.LayoutKafkaMessageEncoder">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>%d{yyyy-MM-dd HH:mm:ss}|${APP_NAME}|%-5level|%ipandhostname|[%thread]| %logger{50}| %msg%n</pattern>
+            </layout>
+        </encoder>
+        <topic>${KAFKA_TOPIC}</topic>
+        <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.RoundRobinKeyingStrategy" />
+        <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy" />
+        <producerConfig>bootstrap.servers=${KAFKA_SERVERS}</producerConfig>
+		<!--新增配置，当kafka连接不上时将日志进行输出到本地-->
+		<producerConfig>max.block.ms=100</producerConfig>
+        <appender-ref ref="STD_LOG_OUT" />
+    </appender>
+    
+	<appender name="FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+           <!-- 日志文件输出的文件名 -->
+            <FileNamePattern>${LOG_HOME}/demo.log.%d{yyyy-MM-dd}.%i.log.zip</FileNamePattern>
+           <!-- 日志文件保留天数 -->
+            <MaxHistory>30</MaxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1000MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- 格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}|${APP_NAME}|%-5level|[%thread]| %logger{50}| %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+	<root level="${ROOT_LEVEL}">
+		<appender-ref ref="STD_LOG_OUT" />
+		<appender-ref ref="FILE" />
+		<!--<appender-ref ref="kafkaAppender" />-->
+	</root>
+	
+	
+</configuration>

@@ -1,0 +1,40 @@
+boot:
+  application:
+    port: '8080'
+    contextPath: /api
+    sessionTimeout: '5000'
+core:
+  logger.logback.file.home: /apps/logs/demo
+  logger.logback.root.level: DEBUG
+  logger.logback.app.name: local
+  logger.logback.kafka.topic: log
+  logger.logback.kafka.servers: 127.0.0.1:9092
+orm:
+  datasources:
+    main:
+      jdbc.driverClassName: com.mysql.cj.jdbc.Driver
+      jdbc.url: jdbc:mysql://127.0.0.1:3306/yango-ihr?serverTimezone=GMT%2B8&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+      jdbc.username: root
+      jdbc.password: 'root'
+      jdbc.initialSize: '0'
+      jdbc.maxActive: '10'
+      jdbc.minIdle: '0'
+      jdbc.maxIdle: '8'
+      jdbc.validationQuery: select 1 from dual
+  mybatis:
+#    interceptors: 'realmHandlerInterceptor'
+security:
+  hashAlgorithmName: MD5
+  user.defaultPassword: 'test_1234'
+  user.canLocalLogin: 'Y'
+  login.type: 'crypter'
+  session.timeout: '86400000'
+  session.prefix: 'ihr-session:'
+  request.header: 'ihrAdminAuthorization'
+  request.appHeader: 'appToken'
+  permission: 'myPermissionService'
+  filter.chain.definitions: |-
+    /security/login=hrmsCors,hrmsAuthc
+    /security/logout=hrmsOptions,hrmsCors,hrmsLogout
+    /public-all/**=anon
+    /**=anon

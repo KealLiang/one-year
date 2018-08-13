@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>demo</artifactId>
+        <groupId>com.kealliang</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>common</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.web</artifactId>
+            <version>${sahara-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.orm</artifactId>
+            <version>${sahara-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>base.common</artifactId>
+            <version>${my-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>base.entity</artifactId>
+            <version>${my-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.test</artifactId>
+            <version>${sahara-version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

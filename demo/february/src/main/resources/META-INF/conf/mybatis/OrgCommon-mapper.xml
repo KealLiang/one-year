@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace = "OrgCommon">
+	<!-- 门店小店业态 -->
+	<sql id="shopBusinessType">
+		business_type in (
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_BRAVOPLUS}',
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_BRAVO}',
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_JB}',
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_YHLIFE}',
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_CJWZ}'
+		)
+	</sql>
+
+	<sql id="storeBusinessType">
+		business_type in (
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_BRAVOPLUS}',
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_BRAVO}',
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_JB}',
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_YHLIFE}',
+			'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_BUSINESS_TYPE_CJWZ}'
+		)
+	</sql>
+	<!-- 门店小店组织类型 -->
+	<sql id="shopOrgType">
+		'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_TYPE_CLIENT_MAJOR}'
+	</sql>
+
+	<sql id="storeOrgType">
+		'${@com.meicloud.ihr.organization.common.OrgTypeConstant@ORG_TYPE_CLIENT_UNIT}'
+	</sql>
+
+</mapper>
