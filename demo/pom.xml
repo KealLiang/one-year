@@ -28,6 +28,7 @@
         <provided-servlet-version>3.0.1</provided-servlet-version>
         <my-version>1.0-SNAPSHOT</my-version>
         <dom4j-version>1.6.1</dom4j-version>
+        <protobuf-version>3.6.1</protobuf-version>
     </properties>
 
     <dependencies>
@@ -43,6 +44,42 @@
             <artifactId>p3c-pmd</artifactId>
             <version>1.3.0</version>
         </dependency>
+
+    <!--    <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>base.entity</artifactId>
+            <version>${my-version}</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>base.common</artifactId>
+            <version>${my-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.web</artifactId>
+            <version>${sahara-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.orm</artifactId>
+            <version>${sahara-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.core</artifactId>
+            <version>${sahara-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.test</artifactId>
+            <version>${sahara-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
 
 

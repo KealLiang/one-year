@@ -3,7 +3,10 @@ import org.jsoup.nodes.Document;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 
 /**
@@ -44,5 +47,38 @@ public class JsoupTest {
                     System.out.println("filter:"+ s);
                     return s.startsWith("J");})
                 .forEach(s -> System.out.println(s));
+    }
+
+    @Test
+    public void objectsUtils(){
+        boolean result1 = Objects.equals(null, "haha");
+        boolean result2 = Objects.equals(2, 2);
+        boolean result3 = Objects.equals(null, null); //true
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
+    }
+
+    @Test
+    public void integerCompareTest(){
+        Integer i1 = 35;
+        Integer i2 = 35;
+        Integer i3 = 135;
+        Integer i4 = 135;
+        System.out.println(i1 == i2); //true
+        System.out.println(i4 == i3); //false
+    }
+
+    @Test
+    public void listRemove() {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        for (String s : list) {
+            if ("1".equals(s)) {
+                list.remove(s);
+            }
+        }
+        list.forEach(System.out :: println);
     }
 }

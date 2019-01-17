@@ -17,6 +17,24 @@
             <artifactId>common</artifactId>
             <version>${my-version}</version>
         </dependency>
+    <!--    <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>base.entity</artifactId>
+            <version>${my-version}</version>
+        </dependency>-->
+
+        <!-- protobuf -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>${protobuf-version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>
