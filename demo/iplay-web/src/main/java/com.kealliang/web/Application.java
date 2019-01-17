@@ -1,5 +1,8 @@
 package com.kealliang.web;
 
+import com.kealliang.entity.Person;
+import com.kealliang.february.dto.People;
+import com.kealliang.utils.GeneratePeople;
 import com.meicloud.sahara.boot.HrmsApplication;
 import com.meicloud.sahara.boot.HrmsBootUtil;
 import com.meicloud.sahara.core.logger.LogbackUtils;
@@ -8,8 +11,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.MultipartConfigElement;
+import java.util.List;
 
 /**
  * @author lsr
@@ -18,6 +25,8 @@ import javax.servlet.MultipartConfigElement;
  */
 @SpringBootApplication
 @ImportResource("classpath*:META-INF/conf/spring/*.xml")
+@RequestMapping("root")
+@RestController
 public class Application extends HrmsApplication {
 
     public static void main(String[] args) {
@@ -39,6 +48,11 @@ public class Application extends HrmsApplication {
         //设置总上传数据总大小
         factory.setMaxRequestSize("20MB");
         return factory.createMultipartConfig();
+    }
+
+    @GetMapping("peoples")
+    public List<Person> generatePeoples() {
+        return GeneratePeople.makeData(100);
     }
 
 }

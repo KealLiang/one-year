@@ -1,6 +1,6 @@
 boot:
   application:
-    port: '8080'
+    port: '8099'
     contextPath: /api
     sessionTimeout: '5000'
 core:

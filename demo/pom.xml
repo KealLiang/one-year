@@ -9,6 +9,7 @@
         <module>common</module>
         <module>iplay-web</module>
         <module>january</module>
+        <module>march</module>
     </modules>
 
     <parent>
