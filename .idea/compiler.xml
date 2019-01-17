@@ -12,6 +12,7 @@
         <module name="february" />
         <module name="iplay-web" />
         <module name="january" />
+        <module name="parent" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
