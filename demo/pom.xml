@@ -24,7 +24,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sahara-version>1.1.3-SNAPSHOT</sahara-version>
+        <sahara-version>1.2.0.beta.1836-SNAPSHOT</sahara-version>
         <ihr-base-version>2.0.2-SNAPSHOT</ihr-base-version>
         <provided-servlet-version>3.0.1</provided-servlet-version>
         <my-version>1.0-SNAPSHOT</my-version>
@@ -70,6 +70,11 @@
         </dependency>
         <dependency>
             <groupId>com.meicloud.sahara</groupId>
+            <artifactId>com.meicloud.sahara.security</artifactId>
+            <version>${sahara-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.meicloud.sahara</groupId>
             <artifactId>com.meicloud.sahara.core</artifactId>
             <version>${sahara-version}</version>
         </dependency>
@@ -78,6 +83,12 @@
             <artifactId>com.meicloud.sahara.test</artifactId>
             <version>${sahara-version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>common</artifactId>
+            <version>${my-version}</version>
         </dependency>
 
 

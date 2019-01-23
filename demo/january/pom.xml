@@ -12,11 +12,6 @@
     <artifactId>january</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.kealliang</groupId>
-            <artifactId>common</artifactId>
-            <version>${my-version}</version>
-        </dependency>
 
         <!-- jsoup依赖 -->
         <dependency>

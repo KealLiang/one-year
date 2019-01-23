@@ -12,11 +12,6 @@
     <artifactId>february</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.kealliang</groupId>
-            <artifactId>common</artifactId>
-            <version>${my-version}</version>
-        </dependency>
     <!--    <dependency>
             <groupId>com.kealliang</groupId>
             <artifactId>base.entity</artifactId>
