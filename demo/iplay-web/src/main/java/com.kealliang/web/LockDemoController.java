@@ -37,6 +37,11 @@ public class LockDemoController {
         lockDemoService.gapTest(id);
     }
 
+    @GetMapping("impossible")
+    public void impossible() {
+        lockDemoService.impossible();
+    }
+
 
 
 

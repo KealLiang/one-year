@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author lsr
@@ -48,7 +49,7 @@ public class LockDemoServiceImpl implements LockDemoService {
     }
 
 
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional
     @Override
     public void gapTest(int id) {
         titleES.delete(id); // 删除
@@ -82,5 +83,16 @@ public class LockDemoServiceImpl implements LockDemoService {
         pm.lt("jobTitleId", upper);
         pm.gt("jobTitleId", lower);
         return titleES.findBy(pm, order);
+    }
+
+
+    @Transactional
+    @Override
+    public void impossible() {
+        ParamMap pm = new ParamMap();
+        pm.eq("jobTitleCode", "15b5ad4c-6800-44d1-b123-d4061ae063e0");
+        pm.eq("jobTitleName", "test1999");
+        pm.eq("description", "这是一条测试数据19990");
+        titleES.deleteBy(pm);
     }
 }

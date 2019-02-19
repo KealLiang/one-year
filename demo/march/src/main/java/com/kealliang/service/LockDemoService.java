@@ -28,4 +28,5 @@ public interface LockDemoService {
     // init
     void initData();
 
+    void impossible();
 }

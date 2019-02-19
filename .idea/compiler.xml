@@ -12,6 +12,7 @@
         <module name="february" />
         <module name="iplay-web" />
         <module name="january" />
+        <module name="march" />
         <module name="parent" />
       </profile>
     </annotationProcessing>
@@ -26,6 +27,7 @@
       <module name="ipeople-parent" target="1.8" />
       <module name="iplay-web" target="1.8" />
       <module name="january" target="1.8" />
+      <module name="march" target="1.8" />
       <module name="parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>
