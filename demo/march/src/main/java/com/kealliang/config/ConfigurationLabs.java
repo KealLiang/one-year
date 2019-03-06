@@ -5,6 +5,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.PostConstruct;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -16,6 +17,11 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Configuration
 public class ConfigurationLabs {
+
+    @PostConstruct
+    public void postMethod() {
+        System.err.println("POST: PostMethod has been invoke");
+    }
 
     /************************** bean的后处理器 **************************/
     @Bean
