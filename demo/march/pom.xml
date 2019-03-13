@@ -19,6 +19,12 @@
             <artifactId>jsoup</artifactId>
             <version>1.10.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>common</artifactId>
+            <version>${my-version}</version>
+        </dependency>
     </dependencies>
 
 

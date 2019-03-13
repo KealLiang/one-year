@@ -30,6 +30,12 @@
             <version>${protobuf-version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>common</artifactId>
+            <version>${my-version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>
