@@ -8,12 +8,10 @@ import com.meicloud.sahara.orm.service.IEntityStatement;
 import com.meicloud.sahara.orm.vo.Order;
 import com.meicloud.sahara.orm.vo.ParamMap;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author lsr
