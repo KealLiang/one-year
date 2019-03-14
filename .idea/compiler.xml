@@ -13,21 +13,20 @@
         <module name="iplay-web" />
         <module name="january" />
         <module name="march" />
-        <module name="parent" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="base" target="1.8" />
       <module name="base.common" target="1.8" />
       <module name="base.entity" target="1.8" />
-      <module name="common" target="1.8" />
-      <module name="demo" target="1.8" />
+      <module name="common" target="1.8.0_152-release" />
+      <module name="demo" target="1.8.0_152-release" />
       <module name="demoweb" target="1.8" />
-      <module name="february" target="1.8" />
+      <module name="february" target="1.8.0_152-release" />
       <module name="ipeople-parent" target="1.8" />
-      <module name="iplay-web" target="1.8" />
-      <module name="january" target="1.8" />
-      <module name="march" target="1.8" />
+      <module name="iplay-web" target="1.8.0_152-release" />
+      <module name="january" target="1.8.0_152-release" />
+      <module name="march" target="1.8.0_152-release" />
       <module name="parent" target="1.8" />
     </bytecodeTargetLevel>
   </component>
