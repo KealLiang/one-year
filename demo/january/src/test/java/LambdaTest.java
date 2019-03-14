@@ -1,10 +1,8 @@
 import com.google.common.collect.Lists;
-import org.jaxen.function.SumFunction;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 /**
  * @author lsr
