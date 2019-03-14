@@ -56,6 +56,16 @@
             <groupId>com.kealliang</groupId>
             <artifactId>base.common</artifactId>
             <version>${my-version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>com.meicloud.ipeople.base.entities</artifactId>
+                    <groupId>com.meicloud.ipeople.base</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>com.meicloud.ipeople.base.common</artifactId>
+                    <groupId>com.meicloud.ipeople.base</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>

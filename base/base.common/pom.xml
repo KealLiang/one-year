@@ -17,11 +17,11 @@
             <artifactId>com.meicloud.ipeople.base.common</artifactId>
             <version>${ihr-base-version}</version>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>com.meicloud.sahara</groupId>
             <artifactId>com.meicloud.sahara.cache</artifactId>
             <version>${sahara-version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.meicloud.ipeople.base</groupId>
             <artifactId>com.meicloud.ipeople.base.common</artifactId>
