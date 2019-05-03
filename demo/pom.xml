@@ -10,6 +10,7 @@
         <module>iplay-web</module>
         <module>january</module>
         <module>march</module>
+        <module>april</module>
     </modules>
 
     <parent>

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="april" />
         <module name="base.common" />
         <module name="base.entity" />
         <module name="common" />
@@ -16,6 +17,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="april" target="1.8.0_152-release" />
       <module name="base" target="1.8" />
       <module name="base.common" target="1.8" />
       <module name="base.entity" target="1.8" />

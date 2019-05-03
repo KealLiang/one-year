@@ -37,6 +37,11 @@
             <artifactId>march</artifactId>
             <version>${my-version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.kealliang</groupId>
+            <artifactId>april</artifactId>
+            <version>${my-version}</version>
+        </dependency>
 
     </dependencies>
 

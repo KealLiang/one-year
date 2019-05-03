@@ -37,7 +37,7 @@ security:
     /security/login=hrmsCors,hrmsAuthc
     /security/logout=hrmsOptions,hrmsCors,hrmsLogout
     /public-all/**=anon
-    /**=anon
+    /**/**=anon
 cache:
   redis:
     host: 10.18.50.163

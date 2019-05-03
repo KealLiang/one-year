@@ -1,19 +1,17 @@
 package com.kealliang.jsoup;
 
-import com.kealliang.jsoup.impl.VisitorImpl;
+import com.kealliang.jsoup.utils.SoupVisitor;
+import com.kealliang.utils.FileUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author lsr
@@ -27,41 +25,37 @@ public class Jsoups {
 
     private static Logger LOG = LoggerFactory.getLogger(Jsoups.class);
 
-    /** url缓存 */
-    private static final Map<String, String> urls = new HashMap<>();
-
-    @Autowired
-    private static Visitor visitor = new VisitorImpl();
-
     /**
-     * 遍历DOM树
+     * 遍历DOM树（jsoup中已提供了实现）
      * 循环 + 回溯 代替递归
+     *
+     * @see org.jsoup.select.NodeTraversor
      * @author lsr
      * @description traverse
      * @Date 16:22 2019/3/13
      * @Param [root]
      * @return void
      */
-    public static void traverse(Node root) {
+    public static void traverse(Node root, SoupVisitor visitor, Set<String> urls) {
         Node node = root;
         int depth = 0;
 
         //这里对树进行后序(深度优先)遍历
         while (node != null) {
             //开始遍历node
-            visitor.head(node, depth);
+            visitor.head(node, urls);
             if (node.childNodeSize() > 0) {
                 node = node.childNode(0);
                 depth++;
             } else {
                 //没有下一个兄弟节点，退栈（回溯）
                 while (node.nextSibling() == null && depth > 0) {
-                    visitor.tail(node, depth);
+                    visitor.tail(node, urls);
                     node = node.parent();
                     depth--;
                 }
                 //结束遍历
-                visitor.tail(node, depth);
+                visitor.tail(node, urls);
                 if (node == root)
                     break;
                 node = node.nextSibling();
@@ -92,22 +86,54 @@ public class Jsoups {
         return doc;
     }
 
-    public Map<String, String> collectUrls (String url) {
+    /** 
+     * 收集url
+     * @author lsr
+     * @description collectUrls
+     * @Date 15:55 2019/3/15
+     * @Param [url]
+     */
+    public static void collectUrls (String url, Set<String> urls) {
+        SoupVisitor visitor = new SoupVisitor();
         Document doc = doc(url, null);
-        Element body = doc.body();
-        System.out.println(body);
-        return urls;
+        if (doc == null) {
+            return;
+        }
+        traverse(doc.root(), visitor, urls);
     }
 
+    /** 
+     * 获取所有的url的set集合
+     * @author lsr
+     * @description getAllUrls
+     * @Date 18:19 2019/3/15
+     * @Param [url]
+     * @return java.util.Set<java.lang.String>
+     */
+    private static Set<String> getAllUrls(String url) {
+        Set<String> urls = new HashSet<>();
+        // 搞个新set避免并发修改异常
+        Set<String> allUrls = new HashSet<>();
+        collectUrls(url, urls);
+        if (urls.size() > 0) {
+            allUrls.addAll(urls);
+            for (String s : urls) {
+                collectUrls(s, allUrls);
+            }
+        }
+        return allUrls;
+    }
 
     public static void main(String[] args) throws IOException {
-        String url = "https://www.baidu.com";
+        String url = "http://www.baidu.com?wd=白皮书";
         Document document = doc(url, null);
         System.out.println(document.title());
 
 //        Element element = document.body();
 //        System.out.println(element);
 
-        traverse(document.root());
+        Set<String> allUrls = getAllUrls(url);
+        FileUtils.write2File(allUrls, "urlsName.txt");
+
     }
 }
