@@ -14,6 +14,8 @@
         <module name="iplay-web" />
         <module name="january" />
         <module name="march" />
+        <module name="may" />
+        <module name="sqlutil" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,7 +31,9 @@
       <module name="iplay-web" target="1.8.0_152-release" />
       <module name="january" target="1.8.0_152-release" />
       <module name="march" target="1.8.0_152-release" />
+      <module name="may" target="1.8.0_152-release" />
       <module name="parent" target="1.8" />
+      <module name="sqlutil" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

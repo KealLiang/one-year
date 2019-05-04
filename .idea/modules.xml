@@ -13,8 +13,10 @@
       <module fileurl="file://$PROJECT_DIR$/demo/iplay-web/iplay-web.iml" filepath="$PROJECT_DIR$/demo/iplay-web/iplay-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/january/january.iml" filepath="$PROJECT_DIR$/demo/january/january.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/march/march.iml" filepath="$PROJECT_DIR$/demo/march/march.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/may/may.iml" filepath="$PROJECT_DIR$/demo/may/may.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/myzone.iml" filepath="$PROJECT_DIR$/.idea/myzone.iml" />
       <module fileurl="file://$PROJECT_DIR$/../parent/parent.iml" filepath="$PROJECT_DIR$/../parent/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlutil/sqlutil.iml" filepath="$PROJECT_DIR$/sqlutil/sqlutil.iml" />
     </modules>
   </component>
 </project>
