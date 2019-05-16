@@ -60,6 +60,16 @@ public class LockDemoServiceImpl implements LockDemoService {
         titleES.create(title); // 插入
     }
 
+    @Transactional
+    @Override
+    public void gapTest2() {
+        List<PosJobTitle> jobTitles = titleES.findBy("jobTitleName", "testGap2019");
+        ParamMap pm = new ParamMap();
+        pm.eq("jobTitleName", "testGap2019");
+        titleES.deleteBy(pm);
+        titleES.batchCreate(jobTitles);
+    }
+
 
     @Override
     public void initData() {

@@ -25,6 +25,8 @@ public interface LockDemoService {
     void gapTest(int id);
 
 
+    void gapTest2();
+
     // init
     void initData();
 
