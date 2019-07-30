@@ -13,6 +13,7 @@
         <module name="february" />
         <module name="iplay-web" />
         <module name="january" />
+        <module name="june" />
         <module name="march" />
         <module name="may" />
         <module name="sqlutil" />
@@ -30,6 +31,7 @@
       <module name="ipeople-parent" target="1.8" />
       <module name="iplay-web" target="1.8.0_152-release" />
       <module name="january" target="1.8.0_152-release" />
+      <module name="june" target="1.8.0_152-release" />
       <module name="march" target="1.8.0_152-release" />
       <module name="may" target="1.8.0_152-release" />
       <module name="parent" target="1.8" />
