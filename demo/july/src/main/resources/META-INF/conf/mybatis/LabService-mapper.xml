@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="LabService">
+    
+    <select id="findDictByCode" parameterType="string" resultType="com.kealliang.vo.DictVO">
+        select i.dict_item_name itemName,
+            i.dict_item_value itemValue
+        from t_sys_dict d
+            left join t_sys_dict_item i on d.dict_id=i.dict_id
+        where d.dict_code=#{dictCode}
+    </select>
+
+</mapper>

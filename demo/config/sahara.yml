@@ -9,11 +9,13 @@ core:
   logger.logback.app.name: local
   logger.logback.kafka.topic: log
   logger.logback.kafka.servers: 127.0.0.1:9092
+# 报错 SQLException: Unknown system variable 'query_cache_size' 是因为mysql是8版本，对应的mysql-connector-java要升级到8.0.11
+# 或者把连接配置成3305的mysql5版本
 orm:
   datasources:
     main:
       jdbc.driverClassName: com.mysql.cj.jdbc.Driver
-      jdbc.url: jdbc:mysql://127.0.0.1:3306/core-authority?serverTimezone=GMT%2B8&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+      jdbc.url: jdbc:mysql://127.0.0.1:3305/core-authority?serverTimezone=GMT%2B8&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
       jdbc.username: root
       jdbc.password: 'root'
       jdbc.initialSize: '0'

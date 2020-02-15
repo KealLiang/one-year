@@ -13,6 +13,7 @@
         <module>april</module>
         <module>may</module>
         <module>june</module>
+        <module>july</module>
     </modules>
 
     <parent>
