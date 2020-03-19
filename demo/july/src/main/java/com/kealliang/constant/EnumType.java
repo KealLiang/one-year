@@ -8,6 +8,7 @@ import org.springframework.util.CollectionUtils;
 
 import javax.annotation.PostConstruct;
 import java.util.EnumSet;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -55,12 +56,20 @@ public enum EnumType {
         @Autowired
         private EnumTypeService enumTypeService;
 
-        private void initEnumType(EnumType enumType) {
-            List<SysDictItem> items = enumTypeService.getDictItemsByCode("SYS_LANGUAGE");
+        private void initEnumType() {
+            List<SysDictItem> items = enumTypeService.getDictItemsByCode("EMP_EMPLOYEE_STATUS");
             if (!CollectionUtils.isEmpty(items)) {
-                for (SysDictItem item : items) {
-                    enumType.setCode(item.getDictItemValue());
-                    enumType.setName(item.getDictItemName());
+                EnumSet<EnumType> enumTypes = EnumSet.allOf(EnumType.class);
+                if(items.size() != enumTypes.size()) {
+                    throw new IllegalArgumentException("初始化异常：字典的内容与枚举类不匹配！");
+                }
+                int i = 0;
+                Iterator<EnumType> it = enumTypes.iterator();
+                while(it.hasNext()) {
+                    EnumType enumType = it.next();
+                    enumType.setCode(items.get(i).getDictItemValue());
+                    enumType.setName(items.get(i).getDictItemName());
+                    i++;
                 }
             }
         }
@@ -81,10 +90,7 @@ public enum EnumType {
         @PostConstruct
         public void postConstruct() {
             System.err.println("EnumTypeInjector 初始化");
-            for (EnumType enumType : EnumSet.allOf(EnumType.class)) {
-                initEnumType(enumType);
-            }
-
+            initEnumType();
         }
 
     }
